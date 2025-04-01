@@ -1,40 +1,10 @@
-#include <iostream>  // Para entrada y salida estándar
-#include <iomanip>   // Para setw y setfill
-#include <string>    // Para manejar el formato a.m./p.m.
+#include "Ejercicio1.h"
 
-using namespace std;
-
-class Hora{
-private:
-    int horas;
-    int minutos;
-    int segundos;
-    bool esAM; // true para AM, false para PM
-public:
-    //Constructores
-    Hora(int h=0, int m=0, int s=0, bool am=true) : horas(h), minutos(m), segundos(s), esAM(am) {
-        validar_datos();
-    }
-
-    //Métodos
-    void validar_datos();
-    void imprimir_hora_12();
-    void imprimir_hora_24();
-
-    //Setters
-    void set_horas(int h) { horas = h; validar_datos(); }
-    void set_minutos(int m) { minutos = m; validar_datos(); }
-    void set_segundos(int s) { segundos = s; validar_datos(); }
-    void set_esAM(bool am) { esAM = am; }
-
-    //Getters
-    int get_horas() { return horas; }
-    int get_minutos() { return minutos; }
-    int get_segundos() { return segundos; }
-    bool get_esAM() { return esAM; }
-
-};
-
+// Constructor
+Hora::Hora(int h, int m, int s, bool am) : horas(h), minutos(m), segundos(s), esAM(am) {
+    validar_datos();
+}
+// Métodos
 void Hora::validar_datos() {
     // Validar horas
     if (horas < 0 || horas > 12) {
@@ -69,6 +39,17 @@ void Hora::imprimir_hora_24() {
          << setw(2) << setfill('0') << segundos << "s" << endl;
 }
 
+//Setters
+void Hora::set_horas(int h) { horas = h; validar_datos(); }
+void Hora::set_minutos(int m) { minutos = m; validar_datos(); }
+void Hora::set_segundos(int s) { segundos = s; validar_datos(); }
+void Hora::set_esAM(bool am) { esAM = am; }
+
+//Getters
+int Hora::get_horas() { return horas; }
+int Hora::get_minutos() { return minutos; }
+int Hora::get_segundos() { return segundos; }
+bool Hora::get_esAM() { return esAM; }
 
 int main() {
     int horas, minutos, segundos;
