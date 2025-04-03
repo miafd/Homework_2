@@ -18,16 +18,9 @@ class Estudiante {
     void agregar_curso(string nombre_curso, double nota_final); //Agregar curso y nota
 
     //Getters
-    string get_nombre_completo() { return nombre_completo; }
-    int get_legajo() { return legajo; }
-    double get_promedio_general() {
-        if (cursos.empty()) return 0.0;
-        double suma = 0;
-        for (const auto& curso : cursos) {
-            suma += curso.second;
-        }
-        return suma / cursos.size();
-    }
+    string get_nombre_completo();
+    int get_legajo();
+    double get_promedio_general();
 };
 
 class Curso{
@@ -45,6 +38,17 @@ class Curso{
     bool desinscribir_estudiante(Estudiante* estudiante) {}
     void imprimir_curso(Curso* curso){}
 };
+
+string Estudiante:: get_nombre_completo() { return nombre_completo; }
+int Estudiante:: get_legajo() { return legajo; }
+double Estudiante::get_promedio_general() {
+    if (cursos.empty()) return 0.0;
+    double suma = 0;
+    for (const auto& curso : cursos) {
+        suma += curso.second;
+    }
+    return suma / cursos.size();
+}
 
 void Estudiante::agregar_curso(string nombre_curso, double nota_final) {
     if (nota_final < 0 || nota_final > 10) {

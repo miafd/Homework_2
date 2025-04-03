@@ -55,5 +55,4 @@ class Complejo : public Numero {
 };
 
 
-
 #endif
