@@ -36,4 +36,10 @@ public:
     bool get_esAM();
 };
 
+// Funciones para el menú interactivo
+void mostrar_menu();
+void cambiar_individual(Hora& h);
+void leer_valores(Hora& h);
+void menu_interactivo();
+
 #endif // HORA_H
