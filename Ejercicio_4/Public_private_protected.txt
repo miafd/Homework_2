@@ -1,0 +1,18 @@
+protected:
+    double balance;
+    string titularCuenta;
+
+Seguridad: Evita el acceso directo desde fuera de la clase.
+Flexibilidad: Permite que las clases derivadas accedan directamente a estos atributos sin necesidad de getters/setters
+
+private:
+    mutable int contadorMostrar = 0;
+
+El contador solo es relevante dentro de la lógica de CajaDeAhorro. Al mantenerlo private, se impide el acceso y modificación desde fuera de la clase
+
+private:
+    CajaDeAhorro* ahorro;
+
+El puntero a una CajaDeAhorro es un detalle de diseño interno para poder delegar el retiro si no hay fondos en la cuenta corriente. Mantenerlo privado protege el puntero de ser manipulado externamente.
+
+El uso de public en estas clases está orientado a garantizar un acceso claro, seguro y controlado a las funcionalidades necesarias, protegiendo al mismo tiempo la implementación interna. Esto permite que el sistema sea robusto ante errores, fácil de mantener y abierto a futuras extensiones o modificaciones sin comprometer la estabilidad del código existente.
