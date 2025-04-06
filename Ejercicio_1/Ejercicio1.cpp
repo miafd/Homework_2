@@ -52,31 +52,32 @@ int Hora::get_segundos() { return segundos; }
 bool Hora::get_esAM() { return esAM; }
 
 //Funciones para el menu interactivo
+
 void mostrar_menu() {
-    cout << "\n--- Menú de opciones ---\n";
-    cout << "1. Inicializar sin parámetros (0h, 0m, 0s a.m.)\n";
-    cout << "2. Ingresar solo la hora (0m, 0s, a.m.)\n";
-    cout << "3. Ingresar hora y minutos (0s, a.m.)\n";
-    cout << "4. Ingresar hora, minutos y segundos (a.m.)\n";
-    cout << "5. Ingresar hora completa (hh mm ss a/p)\n";
-    cout << "6. Cambiar valores individualmente\n";
-    cout << "7. Leer valores actuales\n";
-    cout << "8. Mostrar hora en formato 12 y 24 horas\n";
-    cout << "0. Salir\n";
-    cout << "Seleccione una opción: ";
+    cout << BOLD << BLUE << "\n--- Menú de opciones ---\n" << RESET;
+    cout << GREEN << "1. " << RESET << "Inicializar sin parámetros (0h, 0m, 0s a.m.)\n";
+    cout << GREEN << "2. " << RESET << "Ingresar solo la hora (0m, 0s, a.m.)\n";
+    cout << GREEN << "3. " << RESET << "Ingresar hora y minutos (0s, a.m.)\n";
+    cout << GREEN << "4. " << RESET << "Ingresar hora, minutos y segundos (a.m.)\n";
+    cout << GREEN << "5. " << RESET << "Ingresar hora completa (hh mm ss a/p)\n";
+    cout << GREEN << "6. " << RESET << "Cambiar valores individualmente\n";
+    cout << GREEN << "7. " << RESET << "Leer valores actuales\n";
+    cout << GREEN << "8. " << RESET << "Mostrar hora en formato 12 y 24 horas\n";
+    cout << RED   << "0. " << RESET << "Salir\n";
+    cout << YELLOW << "Seleccione una opción: " << RESET;
 }
 
 
 void cambiar_individual(Hora& h) {
     int opcion;
     do {
-        cout << "\n--- Cambiar campo individual ---\n";
-        cout << "1. Cambiar horas\n";
-        cout << "2. Cambiar minutos\n";
-        cout << "3. Cambiar segundos\n";
-        cout << "4. Cambiar AM/PM\n";
-        cout << "0. Volver\n";
-        cout << "Seleccione una opción: ";
+        cout << BOLD << BLUE << "\n--- Cambiar campo individual ---\n" << RESET;
+        cout << GREEN << "1. " << RESET<< "Cambiar horas\n";
+        cout << GREEN << "2. " << RESET<< "Cambiar minutos\n";
+        cout << GREEN << "3. " << RESET<< "Cambiar segundos\n";
+        cout << GREEN << "4. " << RESET<< "Cambiar AM/PM\n";
+        cout << RED << "0. " << RESET<< "Volver\n";
+        cout << YELLOW<< "Seleccione una opción: " << RESET;
         cin >> opcion;
 
         switch (opcion) {
@@ -147,7 +148,7 @@ void menu_interactivo() {
             }
             case 3: {
                 int hh, mm;
-                cout << "Ingrese hora y minutos: ";
+                cout << "Ingrese hora y minutos (formato: hh mm): ";
                 cin >> hh >> mm;
                 hora.set_horas(hh);
                 hora.set_minutos(mm);
@@ -157,7 +158,7 @@ void menu_interactivo() {
             }
             case 4: {
                 int hh, mm, ss;
-                cout << "Ingrese hora, minutos y segundos: ";
+                cout << "Ingrese hora, minutos y segundos (formato: hh mm ss): ";
                 cin >> hh >> mm >> ss;
                 hora.set_horas(hh);
                 hora.set_minutos(mm);
@@ -168,7 +169,7 @@ void menu_interactivo() {
             case 5: {
                 int hh, mm, ss;
                 char ap;
-                cout << "Ingrese hora, minutos, segundos y a/p: ";
+                cout << "Ingrese hora, minutos, segundos y a/p (formato: hh mm ss a/p): ";
                 cin >> hh >> mm >> ss >> ap;
                 hora.set_horas(hh);
                 hora.set_minutos(mm);
@@ -201,7 +202,6 @@ void menu_interactivo() {
 
     } while (opcion != 0);
 }
-
 
 // El main queda simple y limpio
 int main() {
