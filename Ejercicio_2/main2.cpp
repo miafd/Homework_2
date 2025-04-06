@@ -149,7 +149,6 @@ void menu() {
     } while (opcion != 7);
 }
 
-
 int demo() {
     cout << "\n========== CREACIÓN DE CURSOS Y ESTUDIANTES ==========\n";
     
@@ -225,8 +224,6 @@ int demo() {
 
     return 0;
 }
-
-
 
 int main() {
     int modo;
