@@ -8,11 +8,11 @@ void menu() {
     do {
         cout << "\n--- MENÚ PRINCIPAL ---\n";
         cout << "1. Crear nuevo curso\n";
-        cout << "2. Inscribir estudiante en curso\n";
-        cout << "3. Desinscribir estudiante de curso\n";
+        cout << "2. Inscribir estudiante en un curso\n";
+        cout << "3. Desinscribir estudiante de un curso\n";
         cout << "4. Agregar nota a un estudiante\n";
         cout << "5. Ver cursos y notas de un estudiante\n";
-        cout << "6. Ver lista de estudiantes por curso\n";
+        cout << "6. Ver lista de estudiantes\n";
         cout << "7. Salir\n";
         cout << "Seleccione una opción: ";
         cin >> opcion;
