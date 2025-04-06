@@ -77,44 +77,43 @@ string Complejo::toString() {
 }
 
 int main() {
-    cout << "====OPERACIONES CON ENTEROS===="<<endl;
+    cout << BOLD << MAGENTA <<"OPERACIONES CON ENTEROS"<<RESET<<endl;
     Entero e1(5), e2(3);
     Numero* sumaEntero = e1.suma(&e2);
     Numero* restaEntero = e1.resta(&e2);
     Numero* multiplicacionEntero = e1.multiplicacion(&e2);
-    cout << "e1 = 5, e2 = 3\n";
-    cout << "Suma:            " << sumaEntero->toString() << endl;
-    cout << "Resta:           " << restaEntero->toString() << endl;
-    cout << "Multiplicación:  " << multiplicacionEntero->toString() << endl;
+    cout <<BLUE<< "e1 = 5, e2 = 3\n"<<RESET;
+    cout << BOLD << "Suma:            " << RESET << sumaEntero->toString() << endl;
+    cout << BOLD <<"Resta:           " << RESET<< restaEntero->toString() << endl;
+    cout << BOLD <<"Multiplicación:  " << RESET<< multiplicacionEntero->toString() << endl;
 
     delete sumaEntero;
     delete restaEntero;
     delete multiplicacionEntero;
 
-  
-    cout << "====OPERACIONES CON REALES====" <<endl;
+    cout << BOLD << MAGENTA<< "OPERACIONES CON REALES" <<RESET<<endl;
     Real r1(5.3), r2(2.7);
     Numero* sumaReal = r1.suma(&r2);
     Numero* restaReal = r1.resta(&r2);
     Numero* multiplicacionReal = r1.multiplicacion(&r2);
-    cout << "r1 = 5.3, r2 = 2.7\n";
-    cout << "Suma:            " << sumaReal->toString() << endl;
-    cout << "Resta:           " << restaReal->toString() << endl;
-    cout << "Multiplicación:  " << multiplicacionReal->toString() << endl;
+    cout << BLUE << "r1 = 5.3, r2 = 2.7\n"<< RESET;
+    cout << BOLD << "Suma:            " << RESET << sumaReal->toString() << endl;
+    cout << BOLD <<"Resta:           " << RESET<< restaReal->toString() << endl;
+    cout << BOLD <<"Multiplicación:  " << RESET<< multiplicacionReal->toString() << endl;
 
     delete sumaReal;
     delete restaReal;
     delete multiplicacionReal;
 
-    cout << "====OPERACIONES CON COMPLEJOS====" <<endl;
+    cout << BOLD << MAGENTA<< "OPERACIONES CON COMPLEJOS" <<RESET<<endl;
     Complejo c1(3, 2), c2(1, 4);
     Numero* sumaComplejo = c1.suma(&c2);
     Numero* restaComplejo = c1.resta(&c2);
     Numero* multiplicacionComplejo = c1.multiplicacion(&c2);
-    cout << "c1 = (3 + 2i), c2 = (1 + 4i)\n";
-    cout << "Suma:            " << sumaComplejo->toString() << endl;
-    cout << "Resta:           " << restaComplejo->toString() << endl;
-    cout << "Multiplicación:  " << multiplicacionComplejo->toString() << endl;
+    cout << BLUE << "c1 = (3 + 2i), c2 = (1 + 4i)\n" << RESET;
+    cout << BOLD << "Suma:            " << RESET << sumaComplejo->toString() << endl;
+    cout << BOLD <<"Resta:           " << RESET<< restaComplejo->toString() << endl;
+    cout << BOLD <<"Multiplicación:  " << RESET<< multiplicacionComplejo->toString() << endl;
 
     delete sumaComplejo;
     delete restaComplejo;

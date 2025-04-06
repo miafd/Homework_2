@@ -4,7 +4,13 @@
 #include <iostream>
 #include <string>
 #include <iostream>
-#include <iomanip>
+
+
+#define RESET   "\033[0m"
+#define BLUE    "\033[34m"
+#define MAGENTA "\033[35m"
+#define BOLD    "\033[1m"
+
 using namespace std;
 
 class Numero {
