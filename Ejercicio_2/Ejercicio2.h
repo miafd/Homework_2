@@ -88,21 +88,8 @@ public:
     // Mostrar lista ordenada alfabéticamente por nombre
     void imprimirListaEstudiantes() const;
 
-     // Constructor de copia profunda (copia el contenido, no los punteros)
-    Curso(const Curso& otro);
-        /* Justificación:
-        Se realiza una copia profunda de la estructura del curso, es decir, 
-        se crea un nuevo objeto Curso con su propia lista de punteros a estudiantes. 
-        Sin embargo, los estudiantes no se copian individualmente (no se crean nuevos objetos Estudiante),
-        sino que se mantienen como `shared_ptr`, por lo que los cursos comparten los mismos estudiantes en memoria.
-
-        Esto es adecuado en este diseño porque los estudiantes existen independientemente del curso 
-        y pueden estar inscriptos en varios a la vez. La copia profunda garantiza que 
-        cada curso puede modificar su lista de inscripción sin afectar a los demás cursos,
-        pero cualquier cambio en los datos del estudiante (como agregar una nota) 
-        será visible desde todos los cursos en los que esté inscripto.
-         Esto evita conflictos, como doble eliminación de memoria o modificaciones no deseadas compartidas entre cursos.
-         */
+     // Constructor de copia profunda
+    Curso(const Curso& otro); //Justificación en archivo .txt 
 
 };
 
@@ -111,5 +98,9 @@ void mostrarCursos(const vector<Curso>& cursos);
 int seleccionarCurso(const vector<Curso>& cursos);
 void menu();
 int demo();
+
+
+//Relación entre los objetos curso y estudiante en archivo .txt
+
 
 #endif // EJERCICIO2_H
