@@ -17,8 +17,6 @@ class CuentaBancaria{
     virtual void retirar(double cantidad) = 0; // Método virtual puro
     virtual void mostrarInfo() const = 0; // Método virtual puro
     virtual ~CuentaBancaria() {} // Destructor virtual	
-
-    friend class CuentaCorriente;
 };
 
 //Subclase CajaDeAhorro
@@ -31,6 +29,7 @@ class CajaDeAhorro : public CuentaBancaria{
 
     void retirar(double cantidad) override;
     void mostrarInfo() const override;
+    friend class CuentaCorriente;
 };
 
 class CuentaCorriente : public CuentaBancaria{
