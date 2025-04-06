@@ -6,15 +6,15 @@ void menu() {
     int opcion;
 
     do {
-        cout << "\n--- MENÚ PRINCIPAL ---\n";
-        cout << "1. Crear nuevo curso\n";
-        cout << "2. Inscribir estudiante en un curso\n";
-        cout << "3. Desinscribir estudiante de un curso\n";
-        cout << "4. Agregar nota a un estudiante\n";
-        cout << "5. Ver cursos y notas de un estudiante\n";
-        cout << "6. Ver lista de estudiantes\n";
-        cout << "7. Salir\n";
-        cout << "Seleccione una opción: ";
+        cout << BOLD << BLUE<<"\n--- MENÚ PRINCIPAL ---\n" << RESET;
+        cout << GREEN << "1. " << RESET << "Crear nuevo curso\n";
+        cout << GREEN << "2. " << RESET << "Inscribir estudiante en un curso\n";
+        cout << GREEN << "3. " << RESET << "Desinscribir estudiante de un curso\n";
+        cout << GREEN << "4. " << RESET << "Agregar nota a un estudiante\n";
+        cout << GREEN << "5. " << RESET <<"Ver cursos y notas de un estudiante\n";
+        cout << GREEN << "6. " << RESET << "Ver lista de estudiantes\n";
+        cout << RED << "7. " << RESET <<"Salir\n";
+        cout << YELLOW << "Seleccione una opción: "<< RESET;
         cin >> opcion;
 
         if (cin.fail()) {
@@ -150,7 +150,7 @@ void menu() {
 }
 
 int demo() {
-    cout << "\n========== CREACIÓN DE CURSOS Y ESTUDIANTES ==========\n";
+    cout << BOLD <<BLUE "\n========== CREACIÓN DE CURSOS Y ESTUDIANTES ==========\n"<<RESET;
     
     Curso matematica("Matemática");
     auto e1 = make_shared<Estudiante>("Bruno Alvarez", 101);
@@ -163,13 +163,13 @@ int demo() {
     matematica.inscribirEstudiante(e3);
     matematica.inscribirEstudiante(e4);
 
-    cout << "\n========== ASIGNACIÓN DE NOTAS EN MATEMÁTICA ==========\n";
+    cout << BOLD <<BLUE <<"\n========== ASIGNACIÓN DE NOTAS EN MATEMÁTICA ==========\n" <<RESET;
     matematica.asignarNota(101, 8.5);
     matematica.asignarNota(102, 9.0);
     matematica.asignarNota(103, 7.5);
     matematica.asignarNota(104, 6.0);
 
-    cout << "\n========== CREACIÓN DEL CURSO FÍSICA Y NOTAS ==========\n";
+    cout << BOLD << BLUE <<"\n========== CREACIÓN DEL CURSO FÍSICA Y NOTAS ==========\n"<<RESET;
     Curso fisica("Física");
     fisica.inscribirEstudiante(e2); // Loana
     fisica.inscribirEstudiante(e3); // Carlos
@@ -178,48 +178,48 @@ int demo() {
     fisica.asignarNota(103, 9.5);
     fisica.asignarNota(101, 7.0); // No inscripto (debería dar advertencia)
 
-    cout << "\n========== LISTA DE ESTUDIANTES EN MATEMÁTICA ==========\n";
+    cout << BOLD << BLUE<< "\n========== LISTA DE ESTUDIANTES EN MATEMÁTICA ==========\n"<< RESET;
     matematica.imprimirListaEstudiantes();
 
-    cout << "\n========== VERIFICACIÓN DE INSCRIPCIÓN EN MATEMÁTICA ==========\n";
+    cout << BOLD<< BLUE <<"\n========== VERIFICACIÓN DE INSCRIPCIÓN EN MATEMÁTICA ==========\n"<< RESET;
     cout << "¿Legajo 101 está inscripto?: " << (matematica.esta_inscripto(101) ? "Sí" : "No") << endl;
     cout << "¿Legajo 200 está inscripto?: " << (matematica.esta_inscripto(200) ? "Sí" : "No") << endl;
 
-    cout << "\n========== ¿ESTÁ COMPLETO EL CURSO DE MATEMÁTICA? ==========\n";
+    cout << BOLD <<BLUE << "\n========== ¿ESTÁ COMPLETO EL CURSO DE MATEMÁTICA? ==========\n"<< RESET;
     cout << (matematica.estaCompleto() ? "Sí" : "No") << endl;
 
-    cout << "\n========== CURSOS Y NOTAS DE CADA ESTUDIANTE ==========\n";
+    cout << BOLD <<BLUE <<"\n========== CURSOS Y NOTAS DE CADA ESTUDIANTE ==========\n"<<RESET;
     e1->mostrarCursosYNotas();
     e2->mostrarCursosYNotas();
     e3->mostrarCursosYNotas();
     e4->mostrarCursosYNotas();
 
-    cout << "\n========== PROMEDIO GENERAL DE CADA ESTUDIANTE ==========\n";
+    cout <<BOLD <<BLUE <<"\n========== PROMEDIO GENERAL DE CADA ESTUDIANTE ==========\n"<< RESET;
     cout << e1->getNombre() << " - Promedio: " << e1->getPromedio() << endl;
     cout << e2->getNombre() << " - Promedio: " << e2->getPromedio() << endl;
     cout << e3->getNombre() << " - Promedio: " << e3->getPromedio() << endl;
     cout << e4->getNombre() << " - Promedio: " << e4->getPromedio() << endl;
 
-    cout << "\n========== VERIFICACIÓN DE INSCRIPCIÓN EN FÍSICA ==========\n";
+    cout << BOLD <<BLUE <<"\n========== VERIFICACIÓN DE INSCRIPCIÓN EN FÍSICA ==========\n"<< RESET;
     cout << "Legajo 101 (" << e1->getNombre() << "): " 
          << (fisica.esta_inscripto(101) ? "Sí" : "No") << endl;
     cout << "Legajo 102 (" << e2->getNombre() << "): " 
          << (fisica.esta_inscripto(102) ? "Sí" : "No") << endl;
 
-    cout << "\n========== DESINSCRIPCIÓN DEL LEGAJO 103 EN MATEMÁTICA ==========\n";
+    cout << BOLD << BLUE <<"\n========== DESINSCRIPCIÓN DEL LEGAJO 103 EN MATEMÁTICA ==========\n"<<RESET;
     if (matematica.desinscribirEstudiante(103)) {
         cout << "Desinscripción exitosa.\n";
     } else {
         cout << "No se pudo desinscribir.\n";
     }
 
-    cout << "\n========== LISTA EN MATEMÁTICA TRAS DESINSCRIPCIÓN ==========\n";
+    cout <<BOLD <<BLUE<< "\n========== LISTA EN MATEMÁTICA TRAS DESINSCRIPCIÓN ==========\n"<<RESET;
     matematica.imprimirListaEstudiantes();
 
-    cout << "\n========== COPIA PROFUNDA DEL CURSO MATEMÁTICA ==========\n";
+    cout << BOLD<< BLUE<<"\n========== COPIA PROFUNDA DEL CURSO MATEMÁTICA ==========\n"<<RESET;
     Curso cursoCopia = matematica;
 
-    cout << "\n========== LISTA DE ESTUDIANTES EN LA COPIA ==========\n";
+    cout << BOLD <<BLUE <<"\n========== LISTA DE ESTUDIANTES EN LA COPIA ==========\n"<< RESET;
     cursoCopia.imprimirListaEstudiantes();
 
     return 0;
@@ -227,10 +227,10 @@ int demo() {
 
 int main() {
     int modo;
-    cout << "Seleccione modo de ejecución:\n";
-    cout << "1. Demostración automática\n";
-    cout << "2. Modo interactivo (menú)\n";
-    cout << "Opción: ";
+    cout << BOLD << BLUE <<"Seleccione modo de ejecución:\n" <<RESET;
+    cout << GREEN << "1. " << RESET << "Demostración automática\n";
+    cout << GREEN << "2. " << RESET << "Modo interactivo (menú)\n";
+    cout << BOLD << "Opción: ";
     cin >> modo;
 
     if (modo == 1) {
